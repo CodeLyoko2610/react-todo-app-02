@@ -10,7 +10,7 @@ export default class App extends React.Component {
       {
         id: 1,
         title: 'More focus when coding.',
-        completed: false
+        completed: true
       },
       {
         id: 2,
