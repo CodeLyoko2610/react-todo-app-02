@@ -12,11 +12,14 @@ export default class TodoItem extends React.Component {
   }
 
   render() {
+    let {title, id} = this.props.todo; //Destructuring
+
     return (
       <div style = {this.getStyle()}>
         <p>
-          <input type='checkbox' /> {' '}
-          {this.props.todo.title}
+          {/* Together with this, pass also the id of the item where markComplete is invoked */}
+          <input type='checkbox' onChange={this.props.markComplete.bind(this, id)} /> {' '}
+          {title}
         </p>
       </div>
     );
