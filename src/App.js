@@ -26,22 +26,34 @@ export default class App extends React.Component {
   };
 
   //Toggle todo's complete
-  markComplete = (id) => {
-    this.setState({todos: this.state.todos.map(todo => {
-        if(todo.id === id){
+  markComplete = id => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
           todo.completed = !todo.completed;
         }
-        
+
         return todo;
       })
-    })
-  }
+    });
+  };
+
+  delTodo = id => {
+    this.setState({
+      //todos: this.state.todos.filter(todo => todo.id !== id) //either way is okay
+      todos: [...this.state.todos.filter(todo => todo.id !== id)]
+    });
+  };
 
   render() {
     return (
       <div>
         <h1>App</h1>
-        <Todos todos={this.state.todos} markComplete = {this.markComplete} />
+        <Todos
+          todos={this.state.todos}
+          markComplete={this.markComplete}
+          delTodo={this.delTodo}
+        />
       </div>
     );
   }
