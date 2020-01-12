@@ -4,6 +4,7 @@ import './App.css';
 //Import components
 import Todos from './components/Todos';
 import Header from './components/layouts/Header';
+import AddTodo from './components/layouts/AddTodo';
 
 export default class App extends React.Component {
   state = {
@@ -48,13 +49,16 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header />
-        <Todos
-          todos={this.state.todos}
-          markComplete={this.markComplete}
-          delTodo={this.delTodo}
-        />
+      <div className='App'>
+        <div className='container'>
+          <Header />
+          <AddTodo />
+          <Todos
+            todos={this.state.todos}
+            markComplete={this.markComplete}
+            delTodo={this.delTodo}
+          />
+        </div>
       </div>
     );
   }

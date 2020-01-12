@@ -42,5 +42,6 @@ let btnStyle = {
   borderRadius: '50%',
   padding: '3px 8px',
   float: 'right',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  border: 'none'
 };
