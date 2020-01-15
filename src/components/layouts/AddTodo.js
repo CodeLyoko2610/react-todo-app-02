@@ -7,8 +7,8 @@ export default class AddTodo extends React.Component {
 
   onChange = e => {
     this.setState({
-      title: e.target.value
-    });
+      [e.target.name]: e.target.value
+    }); //Square brackets for the use of computed property - property with value as a result of some methods / functions / properties  with dinamically changing value
   };
 
   render() {
