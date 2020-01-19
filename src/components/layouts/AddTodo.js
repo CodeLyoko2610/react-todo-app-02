@@ -11,9 +11,19 @@ export default class AddTodo extends React.Component {
     }); //Square brackets for the use of computed property - property with value as a result of some methods / functions / properties  with dinamically changing value
   };
 
+  onSubmit = e => {
+    e.preventDefault();
+
+    this.props.addTodo(this.state.title);
+
+    this.setState({
+      title: ''
+    });
+  };
+
   render() {
     return (
-      <form style={{ display: 'flex' }}>
+      <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
         <input
           type='text'
           name='title'
